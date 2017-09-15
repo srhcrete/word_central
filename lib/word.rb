@@ -1,21 +1,18 @@
 class Word
   @@list = []
-  attr_reader(:name, :defintion, :id)
+  attr_reader :id
+  attr_accessor :name, :definition
 
-  def initialize(attributes)
-    @word = attributes.fetch(:name)
-    @definition = attributes.fetch(:definition)
-    @defs = []
+  def initialize(name, definition)
+    @name = name
+    @definition = definition
     @id = @@list.length + 1
-    # def add(@definition)
-    #   @defs.push(@definition)
-    # end
   end
-
 
   def self.sort
     @@list.sort_by! {|word| word.name}
   end
+
 
   def self.find(id)
     @@list[id - 1]
@@ -26,13 +23,17 @@ class Word
   end
 
   def save
-    @@list.push(self)
+    if @@list.all? do |word| #
+      word.name != self.name and self.definition != "" and self.name != ""
+    end
+      @@list.push(self)
+    end
   end
 
   def update
     @@list.each do |word|
       if word.name == self.name
-        @definitions.push(self.definitions)
+        word.definition = self.definition
       end
     end
   end

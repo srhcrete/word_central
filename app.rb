@@ -3,21 +3,20 @@ require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/word')
 
-
 get('/') do
-  @words = Word.sort
-  erb(:input)
+  @list = Word.all()
+
+  erb(:list)
 end
 
+post('/') do
+  name = params["name"]
+  definition = params["definition"]
+  word = Word.new(name, definition)
+  word.save()
+  word.update()
+  @list = Word.sort()
 
-get('/output/:name') do
-  @word = Word.find(params[:name])
-  erb(:output)
-end
 
-post('/output') do
-  @word = Word.new({:name=>params['name'],:definition=>params['definition']})
-  @word.save
-  @words = Word.sort
-  erb(:input)
+  erb(:list)
 end
