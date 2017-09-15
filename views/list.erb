@@ -1,0 +1,19 @@
+<h2>Word Central Dictionary</h2>
+
+<% @list.each do |word| %>
+  <h4><a href="/words/<%= word.id %>"><%= word.word %></a></h4>
+<% end %>
+
+<h4>Add a new word to your personal Word Central Dictionary</h4>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="name">Type the word you'd like to add to your Word Central Dictionary:</label>
+    <input id="name" name="name" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="rank">Type the definition of the word here:</label>
+    <input id="rank" name="rank" class="form-control" type="number">
+  </div>
+  <button type="submit" class="btn">Add word and definition</button>
+</form>

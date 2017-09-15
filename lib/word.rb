@@ -10,7 +10,7 @@ class Word
   end
 
   def self.sort
-    @@list.sort_by! {|item| item.id}
+    @@list.sort_by! {|word| word.id}
   end
 
   def self.find(id) #class methods
@@ -22,17 +22,17 @@ class Word
   end
 
   def save # justt method :)
-    if @@list.all? do |item| #
-      item.name != self.name
+    if @@list.all? do |word| #
+      word.name != self.name
     end
       @@list.push(self)
     end
   end
 
   def update
-    @@list.each do |item|
-      if item.name == self.name
-        item.definitions = self.definitions
+    @@list.each do |word|
+      if word.name == self.name
+        word.definitions = self.definitions
       end
     end
   end

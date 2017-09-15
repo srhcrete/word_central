@@ -8,7 +8,7 @@ describe('') do
     visit('/')
     fill_in('word', :word => 'fragment')
     fill_in('definition', :definition => ['a small part broken or seperated off something', 'to break or cause to break into fragments'])
-    click_button('Add word and definitions')
+    click_button('Add word and definition')
     expect(page).to have_content('fragment')
   end
 end
