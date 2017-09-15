@@ -1,19 +1,23 @@
 class Word
   @@list = []
-  attr_reader :id
-  attr_accessor :word, :definitions
+  attr_reader(:name, :defintion, :id)
 
-  def initialize(word, definitions)
-    @word = word
-    @definitions = definitions
+  def initialize(attributes)
+    @word = attributes.fetch(:name)
+    @definition = attributes.fetch(:definition)
+    @defs = []
     @id = @@list.length + 1
+    # def add(@definition)
+    #   @defs.push(@definition)
+    # end
   end
+
 
   def self.sort
-    @@list.sort_by! {|word| word.id}
+    @@list.sort_by! {|word| word.name}
   end
 
-  def self.find(id) #class methods
+  def self.find(id)
     @@list[id - 1]
   end
 
@@ -21,18 +25,14 @@ class Word
     @@list
   end
 
-  def save # justt method :)
-    if @@list.all? do |word| #
-      word.name != self.name
-    end
-      @@list.push(self)
-    end
+  def save
+    @@list.push(self)
   end
 
   def update
     @@list.each do |word|
       if word.name == self.name
-        word.definitions = self.definitions
+        @definitions.push(self.definitions)
       end
     end
   end
