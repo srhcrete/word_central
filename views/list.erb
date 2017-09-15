@@ -16,5 +16,5 @@
 
 <h4>Your Word Central Dictionary:</h4>
 <% @list.each do |word| %>
-  <h4><a href="/word/<%= word.name %>"><%= word.name %></a></h4>
+  <h4><a href="/entry/<%= word.id %>"><%= word.name %></a></h4>
 <% end %>

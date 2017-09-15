@@ -1,0 +1,7 @@
+<h2>Word: <%= @word.name %></h2>
+<h3>Definition: <%= @word.definition %></h3>
+<form action="/words/<%= @word.definition %>" method="post">
+  <button type="submit" class="btn">Delete a definition</button>
+</form>
+<h4><a href='/definition/<%= @word.id %>'>Add another definition</a></h4>
+<h4><a href='/'>Return home</a></h4>
