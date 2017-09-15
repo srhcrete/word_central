@@ -36,24 +36,14 @@ class Word
      @@list.delete(word)
      end
    end
+  end
+
+  def update(word, definition)
+   self.word = word
+   self.definition = definition
+ end
+
+ def add_def(new_def)
+   self.definition = self.definition, new_def
  end
 end
-  # def self.all
-  #   @@list
-  # end
-  #
-  # def save
-  #   if @@list.all? do |word| #
-  #     word.name != self.name and self.definition != "" and self.name != ""
-  #   end
-  #     @@list.push(self)
-  #   end
-  # end
-
-  # def update
-  #   @@list.each do |word|
-  #     if word.name == self.name
-  #       word.definition.push(self.definition)
-  #     end
-  #   end
-  # end
