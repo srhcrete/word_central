@@ -12,8 +12,8 @@ _Application that can add words with definitions to personal dictionary. When th
 
 | Description        | Input           | Output  |
 | ------------------ |:-------------:| -----:|
-| Lists words in dictionary    | 'fragment', 'a small part broken or seperated off something' | '"fragment" link' |
-| displays word and name and definition when word link is clicked     | 'click "fragment"'     | 'name: fragment, definition: a small part broken or seperated off something'|
+| Lists words in dictionary    | 'fragment', 'a small part broken or separated off something' | '"fragment" link' |
+| displays word and name and definition when word link is clicked     | 'click "fragment"'     | 'name: fragment, definition: a small part broken or separated off something'|
 
 
 ## Setup/Installation Requirements

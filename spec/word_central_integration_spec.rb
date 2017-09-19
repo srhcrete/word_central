@@ -8,21 +8,24 @@ describe('word', {:type => :feature}) do
     visit('/')
     fill_in('name', :with => 'fragment')
     fill_in('definition', :with => 'a small part broken or seperated off something')
-    click_button('Add word and definition')
+    click_button('Go!')
     expect(page).to have_content('fragment')
   end
+
   it "display name of clicked word link" do
     visit('/entry/1')
     click_link('fragment')
     expect(page).to have_content('name: fragment')
     expect(page).to have_content('definition: a small part broken or seperated off something')
   end
+
   it "delete item" do
     visit('/entry/1')
     click_button('Delete!')
     visit('/')
     expect(page).to have_no_content('fragment')
   end
+
   it "will add definition to word object" do
     visit('/')
     fill_in('name', :with => 'fragment')
