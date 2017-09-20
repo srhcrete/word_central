@@ -12,7 +12,7 @@ describe('word', {:type => :feature}) do
     expect(page).to have_content('fragment')
   end
 
-  it('display word and defintion page') do
+  it('display word and definition page') do
     visit('/')
     click_link('fragment')
     visit('/entry/1')

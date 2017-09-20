@@ -5,7 +5,7 @@ class Word
 
   def initialize(name, definition)
     @name = name
-    @definition = []
+    @definitions = [definition]
     @id = @@list.length + 1
   end
 
@@ -34,7 +34,7 @@ class Word
    @definitions.push(definition)
  end
 
- def definitions
+ def self.list
    @definitions
  end
 end
