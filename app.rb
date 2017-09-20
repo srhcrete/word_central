@@ -13,9 +13,7 @@ post('/') do
   definition = params["definition"]
   word = Word.new(name, definition)
   word.save()
-  # word.update()
   @list = Word.all()
-
   erb(:list)
 end
 
@@ -40,6 +38,6 @@ post('/definition/:id') do
   definition = params['definition']
   word = Word.new(name, defintion)
   @word = Word.find(params[:id])
-  # @word.update(name,definition)
+  @word.add_defintion(definition)
   erb(:definition)
 end

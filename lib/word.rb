@@ -5,7 +5,7 @@ class Word
 
   def initialize(name, definition)
     @name = name
-    @definition = definition
+    @definition = []
     @id = @@list.length + 1
   end
 
@@ -30,20 +30,11 @@ class Word
     end
   end
 
-  def self.delete(del_id)
-   @@list.map do |word|
-     if word.id == del_id
-     @@list.delete(word)
-     end
-   end
-  end
-
-  def update(word, definition)
-   self.word = word
-   self.definition = definition
+ def add_definition(definition)
+   @definitions.push(definition)
  end
 
- def add_def(new_def)
-   self.definition = self.definition, new_def
+ def definitions
+   @definitions
  end
 end
