@@ -43,10 +43,10 @@ describe('Word') do
 
   describe('#add_definition') do
     it('adds a defnition to a word') do
-      word = Word.new('fragment','a small part broken off something')
-      word.save()
-      word.add_definition('to break or cause to break into fragments')
-      expect(Word.list()).to(eq(['a small part broken off something', 'to break or cause to break into fragments']))
+      word_test = Word.new('fragment', 'a small part broken off something')
+      word_test.save()
+      word_test.add_definition('to break or cause to break into fragments')
+      expect(word_test.definitions()).to(eq(['a small part broken off something', 'to break or cause to break into fragments']))
     end
   end
 

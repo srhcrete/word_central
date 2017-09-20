@@ -1,6 +1,6 @@
-<h1><%= word.name %></h1>
-  <% word.definitions.each do |definition| %>
-    <h4>Definition <%=word.definitions.index(definition) + 1%>: <%= definition %></h4>
+<h1><%= @word.name %></h1>
+  <% @word.definitions.each do |definition| %>
+    <h4>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h4>
   <% end %>
     <br>
 
