@@ -18,13 +18,20 @@ _Application that can add words with definitions to personal dictionary. When th
 
 ## Setup/Installation Requirements
 
-* _Must have latest version of Ruby Installed_
-* _Copy the repository and run in the Terminal or your favorite text-editor_
+* _Clone the repository here_
+* _In terminal run 'ruby app.rb'_
+* _Use page in browser_
+* _Or use the Heroku link: (https://secret-atoll-19847.herokuapp.com/)_
 
 
 ## Known Bugs
 
 _..._
+
+## Technologies Used
+
+_Ruby, Heroku, Sinatra, Capybara_
+
 
 ## Support and contact details
 
